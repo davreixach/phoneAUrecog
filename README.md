@@ -1,25 +1,18 @@
-# MPC for a Smart Conveyor Belt System
+# Smartphone active use recognition by movement sensors data
 
-This repository provides code to reproduce results from the paper: [Model Based Predictive Control for a Smart Conveyor Belt System](https://github.com/davreixach/smartConvBeltMPC/blob/main/mpc_smart_conveyor_belt-reixach.pdf).
+This repository provides code to reproduce results from the paper: [Smartphone active use recognition by movement sensors data](https://github.com/davreixach/phoneAUrecog/blob/main/BermeoReixach-SmartphoneActiveUseRecognition.pdf).
 
 Here is the method summarized:
 
-Formulation LMPC                         | Formulation NMPC  
+Sensors Measurement                      | States & Transitions classification
 -----------------------------------------|-----------------------------------------
-<img src="https://github.com/davreixach/smartConvBeltMPC/blob/main/smartConvBeltMPClatex/images/problem.png" width="300"> <img src="https://github.com/davreixach/smartConvBeltMPC/blob/main/smartConvBeltMPClatex/images/equations1.png" width="300"> | <img src="https://github.com/davreixach/smartConvBeltMPC/blob/main/smartConvBeltMPClatex/images/equations2.png" width="400">
-<!-- -----------------------------------------|----------------------------------------- -->
-Results LMPC                             | Results NMPC    
------------------------------------------|-----------------------------------------
-<img src="https://github.com/davreixach/smartConvBeltMPC/blob/main/smartConvBeltMPClatex/images/nmpc_xy.png" width="400"> | <img src="https://github.com/davreixach/smartConvBeltMPC/blob/main/smartConvBeltMPClatex/images/lmpc_xy.png" width="400">
-
+<img src="https://github.com/davreixach/phoneAUrecog/blob/main/paper/images/4_1.png" width="350"> | <img src="https://github.com/davreixach/phoneAUrecog/blob/main/paper/images/graf_states.png" width="350"> <img src="https://github.com/davreixach/phoneAUrecog/blob/main/paper/images/6+classes.png" width="350">
 
 ### Preliminaries
 ---
 
 1. Clone the repository
     ```shell
-    $ git clone https://github.com/davreixach/smartConvBeltMPC.git
+    $ git clone https://github.com/davreixach/phoneAUrecog/.git
     $ cd smartConvBeltMPC/code
     ```
-
-2. Install ACADO Toolkit https://acado.github.io/index.html
