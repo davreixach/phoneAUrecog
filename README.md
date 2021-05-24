@@ -6,7 +6,7 @@ Here is the method summarized:
 
 Sensors Measurement                      | States & Transitions classification
 -----------------------------------------|-----------------------------------------
-<img src="https://github.com/davreixach/phoneAUrecog/blob/main/paper/images/4_1.png" width="550"> | <img src="https://github.com/davreixach/phoneAUrecog/blob/main/paper/images/graf_states.png" width="350"> <img src="https://github.com/davreixach/phoneAUrecog/blob/main/paper/images/6+classes.png" width="350">
+<img src="https://github.com/davreixach/phoneAUrecog/blob/main/paper/images/4_1.png" width="600"> | <img src="https://github.com/davreixach/phoneAUrecog/blob/main/paper/images/graf_states.png" width="300"> <img src="https://github.com/davreixach/phoneAUrecog/blob/main/paper/images/6+classes.png" width="300">
 
 ### Preliminaries
 ---
