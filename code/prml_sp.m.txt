@@ -1,0 +1,58 @@
+%% PRML - SP
+% Bermeo & Reixach - 12.05.2018 - Etseib(UPC)
+
+%% Initialization
+clear all, close all, clc
+connector on 12345678
+load('SPdata.mat','datad')
+
+%% Test Initialization
+
+states = ["reading[ss]","reading[m]",...                            % Origing nodes
+          "pocket[ss]","pocket[m]","hand-pocket[m]","table","pocket-hand[m]"];
+
+subjects = ["David Reixach Perez","Miguel Angel Bermeo Ayerbe"];
+time = 20;
+m = mobiledev
+m.AccelerationSensorEnabled = 1;
+m.AngularVelocitySensorEnabled = 1;
+
+
+%% Test process 37 
+% 1 to 30 are bad tests for datad
+i=1; s=1;
+while i <= 30
+    j=mod(i-1,4)+1;
+    val = input(sprintf('Test #%2i: %s. Press enter to continue or R to repeat.',i,states(j)),'s');
+    if lower(val)=='r';
+        i=i-1;
+        j=mod(i-1,4)+1;
+        fprintf('Test #%2i: %s \n',i,states(j))
+    end
+    
+%     s= floor((i-1)/50)+1;
+    
+    datad(i)=test(m,j,time,s,states,subjects);
+    
+    fprintf('# collected samples: %i \n \n',length(datad(i).Acceleration_time))
+    
+    
+%     m = mobiledev;
+%     m.AccelerationSensorEnabled = 1;
+%     m.AngularVelocitySensorEnabled = 1;
+
+    figure(1);
+    subplot(2,1,1);
+    plot(datad(i).Acceleration_time,datad(i).Acceleration); grid on;
+    xlabel('time[s]');
+    title('Acceleration Sensor')
+    subplot(2,1,2);
+    plot(datad(i).AngularVelocity_time,datad(i).AngularVelocity); grid on;
+    xlabel('time[s]');
+    title('Angular Velocity Sensor');
+    
+    save('SPdata.mat','datad','-append')
+    
+    i=i+1;
+end
+
